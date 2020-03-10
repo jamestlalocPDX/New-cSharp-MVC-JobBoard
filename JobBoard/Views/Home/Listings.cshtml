@@ -1,0 +1,9 @@
+@foreach (JobOpening job in Model)
+    {
+        <li>@job.Title</li>
+        <li>@job.Description</li>
+        <li>@job.ContactInfo.Name</li>
+        <li>@job.ContactInfo.PhoneNumber</li>
+        <li>@job.ContactInfo.EmailAddress</li>
+    }
+

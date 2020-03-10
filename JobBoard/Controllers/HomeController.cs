@@ -12,8 +12,8 @@ namespace JobBoard.Controllers
     {
         public IActionResult Index()
         {
-            List<JobOpening> allJobs = JobOpening.GetAll();
-            return View(allJobs);
+            
+            return View();
         }
 
         public IActionResult Jobs()
@@ -26,7 +26,18 @@ namespace JobBoard.Controllers
         {
             Contact newContact = new Contact(name, phoneNumber, emailAddress);
             JobOpening newJob = new JobOpening(title, description, newContact);
-            return RedirectToAction("Index");
+            return RedirectToAction("Listings");
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Listings()
+        {
+            List<JobOpening> allJobs = JobOpening.GetAll();
+            return View(allJobs);
         }
 
         public IActionResult Privacy()
